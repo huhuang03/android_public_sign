@@ -1,0 +1,26 @@
+* Install
+#+begin_src groovy
+signingConfigs {
+    release {
+        storeFile file("../sign/th-an-public.keystore")
+        storePassword "aaa123"
+        keyAlias "aaa123"
+        keyPassword "aaa123"
+    }
+}
+
+buildTypes {
+    release {
+        signingConfig signingConfigs.release
+    }
+    debug {
+        signingConfig signingConfigs.release
+    }
+}
+#+end_src
+
+* th-an-public-sign
+   公共，可公开的签名文件
+   pwd: aaa123
+   alias: aaa123
+   alias pwd: aaa123
